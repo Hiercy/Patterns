@@ -2,6 +2,8 @@ package com.mike.patterns.behavioral.Command.commandlogic;
 
 import com.mike.patterns.behavioral.Command.Database;
 
+import java.sql.SQLException;
+
 public class InsertCommand implements Command {
     private final Database database;
 
@@ -10,7 +12,8 @@ public class InsertCommand implements Command {
     }
 
     @Override
-    public Object execute(String query) {
+    public Object execute(String query) throws SQLException {
         return database.insert(query);
     }
+
 }
