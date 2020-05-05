@@ -15,7 +15,7 @@ public class Database {
     private static int countInsertTransactions = 0;
     private static int countUpdateTransactions = 0;
 
-    private List<Savepoint> lastTransaction = new ArrayList<>();
+    private final List<Savepoint> lastTransaction = new ArrayList<>();
 
     static {
         try {
