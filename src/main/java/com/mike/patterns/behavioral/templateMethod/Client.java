@@ -21,23 +21,19 @@ public class Client {
         String username = "Hiercy";
         String password = "123456789qwerty";
 
-        SocialNetwork network = new Facebook(username, password);
+        SocialNetwork facebook = new Facebook(username, password);
+        SocialNetwork vk = new Vkontakte(username, password);
         Random random = new Random();
 
         for (int i = 0; i < MESSAGES.length; i++) {
             int index = random.nextInt(10);
             String message = MESSAGES[index];
-            if (network instanceof Facebook) {
-                System.out.println("FACEBOOK");
-                network.postMessage(message);
-                network = new Vkontakte(username, password);
-                System.out.println("==================");
-            } else {
-                System.out.println("VKONTAKTE");
-                network.postMessage(message);
-                network = new Facebook(username, password);
-                System.out.println("==================");
-            }
+            System.out.println("FACEBOOK");
+            facebook.postMessage(message);
+            System.out.println("==================");
+            System.out.println("VKONTAKTE");
+            vk.postMessage(message);
+            System.out.println("==================");
         }
     }
 }
