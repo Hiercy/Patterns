@@ -40,6 +40,7 @@ public class Client {
         closedTask = taskManager.getClosedTaskByName("New task");
         System.out.println("Closed task '" + closedTask.getTitle() + "' with id " + closedTask.getIndex() + " with priority " + closedTask.getPriorityType());
 
+        // If you don't want to use the facade pattern
         List<Task> tasks = List.of(
                 new Task.Builder(0, "New project")
                         .setDescription("Need to realize new project")
